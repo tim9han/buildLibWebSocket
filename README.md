@@ -1,22 +1,24 @@
 The repository is based on https://github.com/honjane/buildLibWebSocket
 
-This repository is designed to build the libwebsocket.so file for use as http server/client in your project. 
+This repository is designed to build the libwebsocket library for using libwebsockets on Android.
+For more information about libwebsocket library (writen on C language) visit web page: https://libwebsockets.org/  .
+Use compiled library libwebsocket as http server/client in your project. 
 
 There have been significant changes in the NDK (NDK r19+), which required changes in honjane's script.
 
 Major changes in the modern NDK:
-1. Clang instead of GCC:
-Old: arm-linux-androideabi-gcc
+1. Clang instead of GCC:  
+Old: arm-linux-androideabi-gcc  
 New: armv7a-linux-androideabi21-clang
 
-2. Prebuilt toolchain:
-Old: Create a standalone toolchain
+3. Prebuilt toolchain:  
+Old: Create a standalone toolchain  
 New: Directly use $NDK/toolchains/llvm/prebuilt/
 
-3. API level in the compiler name:
+5. API level in the compiler name:
 New approach includes API level in the name: ${TARGET}${API}-clang
 
-4. LLVM tools:
+7. LLVM tools:
 llvm-ar, llvm-ranlib, llvm-strip instead of GNU versions
 
 -------------------------------------
